@@ -34,7 +34,7 @@
       .container {
         width: 100%;
         max-width: 700px;
-        height: 700px;
+        height: 100vh;
         padding: 2rem;
         display: flex;
         flex-direction: column;
@@ -339,27 +339,6 @@
           this.style.transform = "scale(1)";
           this.style.backgroundColor = "var(--surface-color)";
         });
-      });
-
-      // Product image sneak peek on hover
-      document.addEventListener("mousemove", (e) => {
-        if (e.clientY < window.innerHeight / 2) {
-          productImage.style.opacity = "0";
-          productImage.style.transform = "translate(-50%, -50%) scale(0.8)";
-          return;
-        }
-
-        const x = e.clientX;
-        const y = e.clientY;
-
-        productImage.style.left = `${x}px`;
-        productImage.style.top = `${y}px`;
-        productImage.style.opacity = "1";
-        productImage.style.transform = "translate(-50%, -50%) scale(1)";
-      });
-
-      document.addEventListener("mouseleave", () => {
-        productImage.style.opacity = "0";
       });
 
       // Add glitch effect to logo on click
